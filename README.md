@@ -1,4 +1,4 @@
-# Data Structures and Algorithms - Implementations in Python
+# Data Structures - Implementations in Python
 
 This is a repository that contains implementations for data structures and algorithms in Python.
 
