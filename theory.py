@@ -217,6 +217,68 @@ def abstract_data_types():
 # Linked lists are dynamic data structures where
 # as arrays are static data structures
 
+# Arrays vs Linked Lists Comparison:
+# ---------------------------------
 
+# 1) Dynamic and Static Data Structures :
 
+# Arrays are static data structures - we have to know the size
+# of the arrays in advance (or we have to resize it - think of
+# hash maps)
 
+# Linked Lists are dynamic data structures - they can grow
+# organically based on the references (no resizing needed)
+
+# 2) Random Access (Random Indexing)
+
+# Items in an array are located right next to each other in the main memory(RAM)
+# This is why we can use indices. (NOT TRUE IN PYTHON THOUGH as WE USE LIST FOR
+# ONE-DIMENSIONAL ARRAY, AND NUMPY FOR HIGHER DIMENSIONS)
+
+# There is no random access in a linked list data structure
+
+# 3) Manipulating the first item
+
+# Shift several items (all the items in worst-case) when manipulating
+# the first (or any arbitrary except the last) items in arrays
+
+# Linked lists are dynamic data structures - so we just
+# have to update the references around the head node
+
+# 4) Manipulating the last item
+
+# There can not be holes in the data structure when manipulating the last items in arrays
+
+# Linked Lists have access to the first node (head node) exclusively
+# so in this case we have to traverse the whole list in O(N) running time
+
+# 5) Memory Management
+
+# Arrays do not need any extra memory
+
+# Linked Lists on the other hand do need extra memory as they store references (pointers)
+
+# IMPORTANT NOTE COMMON TO BOTH ARRAYS AND LINKED LISTS:
+
+# Searching for an arbitrary item (or removing an arbitrary item) takes
+# O(N) linear running time for both data structures. This is true for both
+# insertion and removal operations at arbitrary locations in linked list and arrays
+
+# Operation                 Linked List                     Array
+# Search                        O(N)                         O(1) - KNOWN INDEX
+# Insert at the start           O(1)                         O(N)
+# Insert at the end             O(N)                         O(1)
+# Waste Space                   O(N)-because of references   0 - because of no additional memory like references
+# (Memory Complexity)
+
+# Practical Real World Applications of Linked Lists
+
+# Low Level Memory Management - malloc() and free() in C
+
+# Applications tab in Windows showing a minimized screen for all currently running applications
+
+# Windows Photoviewer (link between previous and current photograph)
+
+# Blockchain (each node stores data and two hash values - previous and current hash)
+
+#
