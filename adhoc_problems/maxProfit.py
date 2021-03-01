@@ -1,4 +1,4 @@
-# Buy Sell Stock Problem (As many number of times as possible)
+# Buy Sell Stock Problem (buy-sell as many number of times as possible)
 
 # We are given price of a stock on different days in an array
 # We need to find out the maximum profit that can be earned by
@@ -8,6 +8,8 @@
 # transaction is complete. That is essentially to say that you can
 # hold only one stock at a time.
 
+# Running time complexity : O(N)
+# Space complexity : O(1)
 def max_profit(price):
 
     # assuming local minimum to be at index zero
