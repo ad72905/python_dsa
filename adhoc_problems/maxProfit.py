@@ -36,6 +36,7 @@ def max_profit(price):
     return profit
 
 
+# driver program
 if __name__ == '__main__':
 
     print('Profit :', max_profit([100, 180, 260, 310, 40, 535, 695]))
