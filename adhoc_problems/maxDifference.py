@@ -6,7 +6,7 @@
 
 # Condition : A new transaction can only start once the previous
 # transaction is complete. That is essentially to say that you can
-# hold only one stock at a time.
+# hold only one stock at a time. You must buy before you sell.
 
 # Running time complexity : O(N)
 # Space complexity : O(1)
@@ -29,8 +29,9 @@ def max_profit_method_one(price):
                 (i + 1 == len(price) or price[i] >= price[i + 1]):
             print('Local Minima :', price[j])
             print('Local Maxima :', price[i])
+            print('Profit :', price[i] - price[j])
             profit = max(profit, price[i] - price[j])
-            print('Profit :', profit)
+
 
     # return the max profit achieved
     return profit
@@ -45,9 +46,8 @@ def max_profit_method_two(price):
         return 0
 
     # assuming the first element of array is the minimum
-    min_stock_value = price[0]
     # initializing the max profit to be zero
-    max_profit = 0
+    min_stock_value, max_profit = price[0], 0
 
     # iterating through stock prices and updating max profit and min stock value
     for p in price:
@@ -62,3 +62,5 @@ def max_profit_method_two(price):
 if __name__ == '__main__':
     print('Max Profit using 1st method :', max_profit_method_one([100, 180, 260, 310, 40, 535, 695]))
     print('Max Profit using 2nd method :', max_profit_method_two([100, 180, 260, 310, 40, 535, 695]))
+    print('Max Profit using 1st method :', max_profit_method_one([2, 11, 1, 4, 7]))
+    print('Max Profit using 2nd method :', max_profit_method_two([2, 11, 1, 4, 7]))

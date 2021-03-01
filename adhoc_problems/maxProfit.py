@@ -6,12 +6,11 @@
 
 # Condition : A new transaction can only start once the previous
 # transaction is complete. That is essentially to say that you can
-# hold only one stock at a time.
+# hold only one stock at a time. You must buy before you sell.
 
 # Running time complexity : O(N)
 # Space complexity : O(1)
-def max_profit(price):
-
+def max_profit_method_one(price):
     # assuming local minimum to be at index zero
     j = 0
     # initializing profit to be zero
@@ -22,12 +21,12 @@ def max_profit(price):
     for i in range(1, len(price)):
 
         # if there is a decreasing trend in iteration, update the local min
-        if price[i-1] > price[i]:
+        if price[i - 1] > price[i]:
             j = i
 
         # check for the end of increasing sequence and then calc profit
-        if price[i-1] <= price[i] and \
-                (i+1 == len(price) or price[i] >= price[i+1]):
+        if price[i - 1] <= price[i] and \
+                (i + 1 == len(price) or price[i] >= price[i + 1]):
             print('Local Minima :', price[j])
             print('Local Maxima :', price[i])
             profit = profit + price[i] - price[j]
@@ -36,7 +35,16 @@ def max_profit(price):
     return profit
 
 
+def max_profit_method_two(price):
+    # initializing the profit to zero (useful for empty list or list of length one)
+    profit = 0
+    # successively bagging up profits through iteration
+    for i in range(1, len(price)):
+        profit = profit + max(price[i] - price[i - 1], 0)
+    return profit
+
+
 # driver program
 if __name__ == '__main__':
-
-    print('Profit :', max_profit([100, 180, 260, 310, 40, 535, 695]))
+    print('Profit :', max_profit_method_one([100, 180, 260, 310, 40, 535, 695]))
+    print('Profit :', max_profit_method_two([100, 180, 260, 310, 40, 535, 695]))
