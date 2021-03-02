@@ -32,15 +32,14 @@ def max_profit_method_one(price):
             print('Profit :', price[i] - price[j])
             profit = max(profit, price[i] - price[j])
 
-
     # return the max profit achieved
     return profit
 
 
+# Alternate approach
 # Running time complexity : O(N)
 # Space complexity : O(1)
 def max_profit_method_two(price):
-
     # return zero for an empty list of stock prices
     if len(price) == 0:
         return 0

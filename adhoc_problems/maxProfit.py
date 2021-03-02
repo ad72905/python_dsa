@@ -35,16 +35,24 @@ def max_profit_method_one(price):
     return profit
 
 
+# Alternate approach
+# Running time complexity : O(N)
+# Space complexity : O(1)
 def max_profit_method_two(price):
+
     # initializing the profit to zero (useful for empty list or list of length one)
     profit = 0
+
     # successively bagging up profits through iteration
     for i in range(1, len(price)):
         profit = profit + max(price[i] - price[i - 1], 0)
+
+    # return max profit thus calculated
     return profit
 
 
 # driver program
 if __name__ == '__main__':
+
     print('Profit :', max_profit_method_one([100, 180, 260, 310, 40, 535, 695]))
     print('Profit :', max_profit_method_two([100, 180, 260, 310, 40, 535, 695]))
