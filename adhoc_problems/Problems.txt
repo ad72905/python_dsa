@@ -1,0 +1,15 @@
+Given a number 'x', and a range of 'y' to 'z', please find the count of all the numbers 'n' in that range, such that the product of the number 'n' and 'x' doesn't contain any digit from the number 'n'. 
+If x=2, y=10, z=15 then final answer is 4. Since only 22, 26, 28, 30 are valid products.
+
+
+Given matrix of size m*n, m denotes the row starting with index 0 and n denotes the column starting with index 0. 
+The elements in matrix are populated with values either 1 or 0. 
+1 indicates the matrix position available for establishing the connection and 0 indicates the matrix position is NOT available for establishing connection. 
+We need to connect the available adjacent positions vertically, horizontally and diagonally and count the no of distinct connections established. 
+
+1x0x0x1
+0x1x1x1
+1x0x0x1
+
+no. Of paths = 8
+

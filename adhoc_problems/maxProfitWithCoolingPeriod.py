@@ -15,25 +15,31 @@
 
 def max_profit(price):
 
-    j = 0
+    # no profit for an empty array or a single day price availability
+    if price == [] or len(price) == 1:
+        return 0
 
+    # assuming local minimum to be at index zero
+    buy = price[0]
+
+    # building a profit capability array
+    profit_cap = []
+
+    # building profit array through the array
+    for i in range(0, len(price)):
+        buy = min(buy, price[i])
+        profit_cap.append(price[i] - buy)
+
+    # taking into account cooldown effect along profit capability on each day
+    print(profit_cap)
     profit = 0
-
-    for i in range(1, len(price)):
-
-        # updating local minimum
-        if price[i-1] > price[i]:
-            j = i
-
-        # storing all possible profits in all increasing sequences
-        if price[i-1] <= price[i] and \
-                (i + 1 == len(price) or price[i] >= price[i+1]):
-            profit = profit + price[i] - price[j]
-            i, j = i+2, i+2
+    for cool_down in range(2, len(profit_cap)):
+        if profit_cap[cool_down] > 0:
+            profit = max(profit, sum(profit_cap) - profit_cap[cool_down])
 
     return profit
 
 
 # driver program
 if __name__ == '__main__':
-    print('Max_Profit :', max_profit([1, 2, 3, 0, 2]))
+    print('Max Profit :', max_profit([1, 2, 3, 0, 2]))
